@@ -1,0 +1,13 @@
+<script>
+    var serveurs = JSON.parse('{{{serveurs}}}');
+    console.log(serveurs);
+    for (var i = 0; i < serveurs.length; i++) {
+        var nom = serveurs [i]["nom"];
+        var adresse = "./testserveur?index=" + i;
+        tabserveur[i] = new serveur(i, adresse, nom);
+        tabserveur[i].loaddata();
+        console.log(tabserveur[i].val);
+        tabserveur[i].afficheInfosServeur();
+    }
+    document.getElementById("masqueMaj").style.display = "none";
+</script>
